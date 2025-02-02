@@ -3,6 +3,9 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
+func fall():
+	print("collsion")
+
 func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
