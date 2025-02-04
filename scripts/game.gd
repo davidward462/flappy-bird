@@ -7,6 +7,9 @@ const wall_spawn_y_offset = 338
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# timer
+	var timer = get_node("Timer")
+	timer.timeout.connect(_on_timer_timeout)
 	randomize()
 	
 func create_wall(x_pos, y_pos)  -> void:
@@ -23,7 +26,7 @@ func create_wall(x_pos, y_pos)  -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	# for testing only
-	if Input.is_action_just_pressed("ui_down"):
-		create_wall(wall_spawn_x_pos, 0)
+	pass
+
+func _on_timer_timeout():
+	create_wall(wall_spawn_x_pos, 0)
