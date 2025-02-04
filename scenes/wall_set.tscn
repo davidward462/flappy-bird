@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dulrggsyapgjx"]
+
+[ext_resource type="PackedScene" uid="uid://dfcpibawan7lp" path="res://scenes/wall.tscn" id="1_kpgjx"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" parent="." instance=ExtResource("1_kpgjx")]
+
+[node name="Area2D2" parent="." instance=ExtResource("1_kpgjx")]
+position = Vector2(0, 432)

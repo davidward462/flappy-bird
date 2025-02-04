@@ -2,7 +2,7 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 var wall_scene = preload("res://scenes/wall.tscn")
-var wall_spawn_x_pos = 400
+var wall_spawn_x_pos = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func create_wall()  -> void:
 	# create upper and lower parts
-	var center_height = randf_range(-150, 150)
+	var center_height = randf_range(-200, 200)
 	#var center_height = 0
 	
 	create_block(wall_spawn_x_pos, center_height)
