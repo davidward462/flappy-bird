@@ -4,7 +4,7 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_kpgjx")]
+[node name="upper_wall" parent="." instance=ExtResource("1_kpgjx")]
+position = Vector2(0, -438)
 
-[node name="Area2D2" parent="." instance=ExtResource("1_kpgjx")]
-position = Vector2(0, 432)
+[node name="lower_wall" parent="." instance=ExtResource("1_kpgjx")]
