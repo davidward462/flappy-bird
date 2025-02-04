@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D  
 
 var speed = 90.0
 const DIRECTION = -1
@@ -11,3 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# move
 	position.x += speed * delta * DIRECTION
+	
+	if position.x < -100:
+		print("freed")
+		queue_free()

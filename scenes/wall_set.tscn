@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dulrggsyapgjx"]
+[gd_scene load_steps=3 format=3 uid="uid://dulrggsyapgjx"]
 
+[ext_resource type="Script" path="res://scripts/wall_set.gd" id="1_httfe"]
 [ext_resource type="PackedScene" uid="uid://dfcpibawan7lp" path="res://scenes/wall.tscn" id="1_kpgjx"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_httfe")
 
 [node name="upper_wall" parent="." instance=ExtResource("1_kpgjx")]
 position = Vector2(0, -538)

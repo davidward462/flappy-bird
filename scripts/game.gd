@@ -10,14 +10,15 @@ func _ready() -> void:
 	randomize()
 	
 func create_wall(x_pos, y_pos)  -> void:
-	var random_height = randf_range(-100, 100)
+	var random_height = int(randf_range(-100, 100))
 	var center_height = 0 + wall_spawn_y_offset + random_height
-	
+	var y_spawn = y_pos + center_height
 	# create instance 
 	var instance = wall_set_scene.instantiate()
 	# set position
 	instance.position.x = x_pos
-	instance.position.y = y_pos + center_height
+	instance.position.y = y_spawn
+	print("spawned wall at (" + str(x_pos) + ", " + str(y_spawn) + ")")
 	add_child(instance)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
