@@ -5,6 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="upper_wall" parent="." instance=ExtResource("1_kpgjx")]
-position = Vector2(0, -438)
+position = Vector2(0, -538)
 
 [node name="lower_wall" parent="." instance=ExtResource("1_kpgjx")]
