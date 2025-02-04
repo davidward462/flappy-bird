@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	# move
 	position.x += speed * delta * DIRECTION
 	
+	# free
 	if position.x < -100:
 		print("freed")
 		queue_free()
