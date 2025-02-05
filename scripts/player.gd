@@ -9,9 +9,10 @@ func _ready():
 	pass
 
 func fall():
-	alive = false
-	velocity.y = 0
-	print("collsion")
+	if alive:
+		alive = false
+		velocity.y = 0
+		print("collsion")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
