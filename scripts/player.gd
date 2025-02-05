@@ -5,7 +5,6 @@ const GRAVITY = Vector2(0, 2000)
 var alive = true
 
 func _ready():
-	# set gravity multiplier
 	pass
 
 func fall():

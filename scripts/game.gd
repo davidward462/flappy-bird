@@ -1,11 +1,11 @@
 extends Node
 
-var rng = RandomNumberGenerator.new()
 var wall_set_scene = preload("res://scenes/wall_set.tscn")
-var wall_spawn_x_pos = 400
+const wall_spawn_x_pos = 400
 const wall_spawn_y_offset = 338
 var score = 0
 var game_running = true
+
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
 

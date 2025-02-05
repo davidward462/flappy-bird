@@ -23,7 +23,6 @@ func stop_movement():
 
 func collision(body: Node2D):
 	body.fall()
-	pass
 
 func _on_upper_wall_body_entered(body: Node2D) -> void:
 	collision(body)
