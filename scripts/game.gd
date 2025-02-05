@@ -26,14 +26,17 @@ func create_wall(x_pos, y_pos)  -> void:
 	instance.position.y = y_spawn
 	print("spawned wall at (" + str(x_pos) + ", " + str(y_spawn) + ")")
 	add_child(instance)
+	instance.add_to_group("existing_walls")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	# stop the timer if the player is dead
+	# stop the timer if the player is dead.
+	# Maybe this should be done with a signal.
 	if game_running:
 		if not player_node.alive:
 			timer.stop()
+			get_tree().call_group("existing_walls", "stop_movement")
 			game_running = false
 
 func _on_timer_timeout():

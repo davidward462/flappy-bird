@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 	# free
 	if position.x < -100:
 		print("freed")
+		self.remove_from_group("existing_walls")
 		queue_free()
 		
 func stop_movement():

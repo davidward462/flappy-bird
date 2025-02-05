@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2cm83"]
 [ext_resource type="PackedScene" uid="uid://bfso104brjspo" path="res://scenes/player.tscn" id="1_kf1n1"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" groups=["existing_walls"]]
 script = ExtResource("1_2cm83")
 
 [node name="Camera2D" type="Camera2D" parent="."]
