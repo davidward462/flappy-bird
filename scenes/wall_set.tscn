@@ -10,3 +10,6 @@ script = ExtResource("1_httfe")
 position = Vector2(0, -538)
 
 [node name="lower_wall" parent="." instance=ExtResource("1_kpgjx")]
+
+[connection signal="body_entered" from="upper_wall" to="." method="_on_upper_wall_body_entered"]
+[connection signal="body_entered" from="lower_wall" to="." method="_on_lower_wall_body_entered"]

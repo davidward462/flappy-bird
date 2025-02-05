@@ -16,3 +16,16 @@ func _process(delta: float) -> void:
 	if position.x < -100:
 		print("freed")
 		queue_free()
+		
+func stop_movement():
+	speed = 0
+
+func collision(body: Node2D):
+	body.fall()
+	pass
+
+func _on_upper_wall_body_entered(body: Node2D) -> void:
+	collision(body)
+
+func _on_lower_wall_body_entered(body: Node2D) -> void:
+	collision(body)

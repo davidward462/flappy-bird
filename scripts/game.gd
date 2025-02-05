@@ -5,11 +5,13 @@ var wall_set_scene = preload("res://scenes/wall_set.tscn")
 var wall_spawn_x_pos = 400
 const wall_spawn_y_offset = 338
 var score = 0
+var game_running = true
+@onready var player_node = get_node("Player")
+@onready var timer = get_node("Timer")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# timer
-	var timer = get_node("Timer")
 	timer.timeout.connect(_on_timer_timeout)
 	randomize()
 	
@@ -27,6 +29,11 @@ func create_wall(x_pos, y_pos)  -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	# stop the timer if the player is dead
+	if game_running:
+		if not player_node.alive:
+			timer.stop()
 	pass
 
 func _on_timer_timeout():
