@@ -9,6 +9,7 @@ var game_running = true
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
 @onready var score_label: Label = $Score_label
+@onready var background: ParallaxBackground = $ParallaxBackground
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +58,7 @@ func restart_game() -> void:
 func stop_game() -> void:
 	timer.stop()
 	get_tree().call_group("existing_walls", "stop_movement")
+	background.stop_movement()
 	game_running = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
