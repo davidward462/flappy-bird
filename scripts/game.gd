@@ -39,6 +39,11 @@ func create_wall(x_pos, y_pos)  -> void:
 	
 	# add to group of walls on screen
 	instance.add_to_group("existing_walls")
+	instance.connect('point_scored', increment_score)
+	
+func increment_score() -> void:
+	score += 1
+	print("score: " + str(score))
 	
 func restart_game() -> void:
 	print("restart")
