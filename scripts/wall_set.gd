@@ -18,7 +18,6 @@ func free_if_out_of_bounds(bound: int) -> void:
 func _process(delta: float) -> void:
 	# move
 	position.x += speed * delta * DIRECTION
-	
 	# free
 	free_if_out_of_bounds(-100)
 		
