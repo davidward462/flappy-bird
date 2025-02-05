@@ -4,10 +4,10 @@ const JUMP_VELOCITY = -600.0
 const GRAVITY = Vector2(0, 2000)
 var alive = true
 
-func _ready():
+func _ready() -> void:
 	pass
 
-func fall():
+func fall() -> void:
 	if alive:
 		alive = false
 		velocity.y = 0

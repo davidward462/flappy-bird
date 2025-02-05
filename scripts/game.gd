@@ -24,7 +24,6 @@ func calc_y_spawn_pos(y_pos) -> int:
 func create_wall(x_pos, y_pos)  -> void:
 	var y_spawn = calc_y_spawn_pos(y_pos)
 	
-	
 	# create instance 
 	var instance = wall_set_scene.instantiate()
 	
@@ -40,22 +39,28 @@ func create_wall(x_pos, y_pos)  -> void:
 	
 	# add to group of walls on screen
 	instance.add_to_group("existing_walls")
+	
+func restart_game() -> void:
+	print("restart")
+	get_tree().reload_current_scene()
+	
+func stop_game() -> void:
+	timer.stop()
+	get_tree().call_group("existing_walls", "stop_movement")
+	game_running = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	# input for game restart
-	if Input.is_action_just_pressed("restart"):
-		print("restart")
-		get_tree().reload_current_scene()
+	if Input.is_action_just_pressed("restart") and not player_node.alive:
+		restart_game()
 	
 	# stop the timer if the player is dead.
 	# Maybe this should be done with a signal.
 	if game_running:
 		if not player_node.alive:
-			timer.stop()
-			get_tree().call_group("existing_walls", "stop_movement")
-			game_running = false
+			stop_game()
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	create_wall(wall_spawn_x_pos, 0)
