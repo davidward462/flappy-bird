@@ -4,6 +4,7 @@ var rng = RandomNumberGenerator.new()
 var wall_set_scene = preload("res://scenes/wall_set.tscn")
 var wall_spawn_x_pos = 400
 const wall_spawn_y_offset = 338
+var score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
