@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	if game_running:
 		if not player_node.alive:
 			timer.stop()
-	pass
+			game_running = false
 
 func _on_timer_timeout():
 	create_wall(wall_spawn_x_pos, 0)
