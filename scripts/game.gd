@@ -8,19 +8,21 @@ var game_running = true
 
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
+@onready var score_label: Label = $Score_label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# timer
 	timer.timeout.connect(_on_timer_timeout)
 	randomize()
+	set_score_ui()
 	
 func calc_y_spawn_pos(y_pos) -> int:
 	var random_height = int(randf_range(-100, 100))
 	var center_height = 0 + wall_spawn_y_offset + random_height
 	var y_spawn = y_pos + center_height
 	return y_spawn
-	
+
 func create_wall(x_pos, y_pos)  -> void:
 	var y_spawn = calc_y_spawn_pos(y_pos)
 	
@@ -41,9 +43,12 @@ func create_wall(x_pos, y_pos)  -> void:
 	instance.add_to_group("existing_walls")
 	instance.connect('point_scored', increment_score)
 	
+func set_score_ui() -> void:
+	score_label.text = str(score)
+	
 func increment_score() -> void:
 	score += 1
-	print("score: " + str(score))
+	set_score_ui()
 	
 func restart_game() -> void:
 	print("restart")
