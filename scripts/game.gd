@@ -15,13 +15,15 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	randomize()
 	
-func calc_y_spawn_pos(y_pos):
+func calc_y_spawn_pos(y_pos) -> int:
 	var random_height = int(randf_range(-100, 100))
 	var center_height = 0 + wall_spawn_y_offset + random_height
 	var y_spawn = y_pos + center_height
+	return y_spawn
 	
 func create_wall(x_pos, y_pos)  -> void:
 	var y_spawn = calc_y_spawn_pos(y_pos)
+	
 	
 	# create instance 
 	var instance = wall_set_scene.instantiate()
