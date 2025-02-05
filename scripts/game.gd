@@ -44,6 +44,11 @@ func create_wall(x_pos, y_pos)  -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	# input for game restart
+	if Input.is_action_just_pressed("restart"):
+		print("restart")
+		get_tree().reload_current_scene()
+	
 	# stop the timer if the player is dead.
 	# Maybe this should be done with a signal.
 	if game_running:
