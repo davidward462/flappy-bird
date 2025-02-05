@@ -10,3 +10,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+# body collides with wall
+func _on_body_entered(body: Node2D) -> void:
+	#print("body entered")
+	body.fall()
+	pass # Replace with function body.
