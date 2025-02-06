@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfcpibawan7lp"]
 
 [ext_resource type="Script" path="res://scripts/wall.gd" id="1_lb1bu"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gv3e7"]
+[ext_resource type="Texture2D" uid="uid://bwc8g6ms45ajl" path="res://assets/sprites/pipe.png" id="2_cdp2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00sbq"]
 size = Vector2(102, 338)
@@ -11,9 +10,9 @@ size = Vector2(102, 338)
 script = ExtResource("1_lb1bu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(51, 169)
-scale = Vector2(102, 338)
-texture = SubResource("PlaceholderTexture2D_gv3e7")
+position = Vector2(52, 239)
+scale = Vector2(1.2, 1.1955)
+texture = ExtResource("2_cdp2b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(51, 169)

@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 	# move
 	position.x += speed * delta * DIRECTION
 	# free
-	free_if_out_of_bounds(-100)
+	free_if_out_of_bounds(-120)
 		
 func stop_movement() -> void:
 	speed = 0

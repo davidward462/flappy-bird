@@ -17,6 +17,7 @@ theme_override_font_sizes/font_size = 20
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_kf1n1")]
+z_index = 2
 position = Vector2(181, 319)
 
 [node name="Timer" type="Timer" parent="."]
