@@ -28,7 +28,7 @@ autostart = true
 script = ExtResource("3_4vvw3")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(360, 640)
+motion_mirroring = Vector2(360, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(180, 320)
