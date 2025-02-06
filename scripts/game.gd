@@ -19,7 +19,7 @@ func _ready() -> void:
 	set_score_ui()
 	
 func calc_y_spawn_pos(y_pos) -> int:
-	var random_height = int(randf_range(-100, 100))
+	var random_height = int(randf_range(-80, 200))
 	var center_height = 0 + wall_spawn_y_offset + random_height
 	var y_spawn = y_pos + center_height
 	return y_spawn
