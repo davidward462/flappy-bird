@@ -34,9 +34,6 @@ func create_wall(x_pos, y_pos)  -> void:
 	instance.position.x = x_pos
 	instance.position.y = y_spawn
 	
-	# for debug
-	print("spawned wall at (" + str(x_pos) + ", " + str(y_spawn) + ")")
-	
 	# add child to node tree
 	add_child(instance)
 	
@@ -52,7 +49,6 @@ func increment_score() -> void:
 	set_score_ui()
 	
 func restart_game() -> void:
-	print("restart")
 	get_tree().reload_current_scene()
 	
 func stop_game() -> void:

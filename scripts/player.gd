@@ -12,7 +12,6 @@ func fall() -> void:
 	if alive:
 		alive = false
 		velocity.y = 0
-		print("collsion")
 		
 #func _process(delta: float) -> void:
 	#if Input.is_action_pressed("jump"):

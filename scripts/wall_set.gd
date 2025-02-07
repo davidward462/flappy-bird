@@ -10,7 +10,6 @@ func _ready() -> void:
 	
 func free_if_out_of_bounds(bound: int) -> void:
 	if position.x < bound:
-		print("freed")
 		self.remove_from_group("existing_walls")   
 		queue_free()
 
