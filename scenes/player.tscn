@@ -1,7 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfso104brjspo"]
+[gd_scene load_steps=6 format=3 uid="uid://bfso104brjspo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pvl46"]
 [ext_resource type="Texture2D" uid="uid://c2aap33oj3vmy" path="res://assets/sprites/sprite_0.png" id="2_ylj8l"]
+[ext_resource type="Texture2D" uid="uid://dcwhl83muj87i" path="res://assets/sprites/sprite_1.png" id="3_r5q2c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blbcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ylj8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r5q2c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opo7p"]
 radius = 16.0
@@ -13,7 +28,10 @@ script = ExtResource("1_pvl46")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 0)
 scale = Vector2(0.883333, 0.739)
-texture = ExtResource("2_ylj8l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_blbcc")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
