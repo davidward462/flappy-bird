@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bssr8a8i1nlbg"]
+[gd_scene load_steps=7 format=3 uid="uid://bssr8a8i1nlbg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2cm83"]
 [ext_resource type="PackedScene" uid="uid://bfso104brjspo" path="res://scenes/player.tscn" id="1_kf1n1"]
 [ext_resource type="Script" path="res://scripts/parallax_background.gd" id="3_4vvw3"]
+[ext_resource type="FontFile" uid="uid://cb6tm3h61r342" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_23i1s"]
 [ext_resource type="Texture2D" uid="uid://c04q0whkcr0q1" path="res://assets/sprites/bg.png" id="3_y8sia"]
 [ext_resource type="PackedScene" uid="uid://cunxrycb6dokl" path="res://scenes/killzone.tscn" id="5_b8snf"]
 
@@ -14,10 +15,13 @@ position = Vector2(232, 794)
 
 [node name="Score_label" type="Label" parent="."]
 z_index = 1
-offset_right = 59.0
-offset_bottom = 28.0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 83.0
+offset_bottom = 54.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_23i1s")
+theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_kf1n1")]
