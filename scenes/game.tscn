@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bssr8a8i1nlbg"]
+[gd_scene load_steps=10 format=3 uid="uid://bssr8a8i1nlbg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_2cm83"]
 [ext_resource type="PackedScene" uid="uid://bfso104brjspo" path="res://scenes/player.tscn" id="1_kf1n1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/bg_trees.gd" id="6_jqdlq"]
 [ext_resource type="Texture2D" uid="uid://druffgo3v0xus" path="res://assets/sprites/bg-trees.png" id="6_pq41v"]
 [ext_resource type="Texture2D" uid="uid://d16svma74typf" path="res://assets/sprites/bg-city-clouds.png" id="7_54ish"]
+[ext_resource type="AudioStream" uid="uid://c3d7upehapg6h" path="res://assets/sounds/lovescotch__sky-surf.wav" id="9_nuw8h"]
 
 [node name="Game" type="Node" groups=["existing_walls"]]
 script = ExtResource("1_2cm83")
@@ -52,3 +53,8 @@ motion_mirroring = Vector2(360, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bg_clouds"]
 position = Vector2(180, 320)
 texture = ExtResource("7_54ish")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_nuw8h")
+volume_db = -10.0
+autoplay = true
