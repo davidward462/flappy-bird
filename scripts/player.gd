@@ -4,6 +4,7 @@ const JUMP_VELOCITY = -600.0
 const GRAVITY = Vector2(0, 2000)
 var alive = true
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
+@onready var flap_sound: AudioStreamPlayer2D = $FlapSound
 
 func _ready() -> void:
 	pass
@@ -26,5 +27,6 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and alive:
 		velocity.y = JUMP_VELOCITY
-
+		flap_sound.play()
+		
 	move_and_slide()

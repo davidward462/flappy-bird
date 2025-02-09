@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfso104brjspo"]
+[gd_scene load_steps=7 format=3 uid="uid://bfso104brjspo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pvl46"]
 [ext_resource type="Texture2D" uid="uid://c2aap33oj3vmy" path="res://assets/sprites/sprite_0.png" id="2_ylj8l"]
 [ext_resource type="Texture2D" uid="uid://dcwhl83muj87i" path="res://assets/sprites/sprite_1.png" id="3_r5q2c"]
+[ext_resource type="AudioStream" uid="uid://ckktlu5ymi84o" path="res://assets/sounds/wing-flag-flapping.wav" id="4_1e8g8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blbcc"]
 animations = [{
@@ -37,3 +38,7 @@ autoplay = "default"
 position = Vector2(-1, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_opo7p")
+
+[node name="FlapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1e8g8")
+bus = &"SFX"
