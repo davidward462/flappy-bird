@@ -47,7 +47,7 @@ offset_bottom = 54.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_23i1s")
 theme_override_font_sizes/font_size = 16
-text = "Press 'space' to jump,
+text = "Press 'space' to jump
 and to start the game."
 metadata/_edit_use_anchors_ = true
 
@@ -66,7 +66,7 @@ offset_bottom = 420.25
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_23i1s")
 theme_override_font_sizes/font_size = 16
-text = "Press 'R to restart on
+text = "Press 'R' to restart on
 a failed attempt."
 metadata/_edit_use_anchors_ = true
 
