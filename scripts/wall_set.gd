@@ -3,6 +3,7 @@ extends Node2D
 var speed = 90.0
 const DIRECTION = -1
 signal point_scored
+@onready var score_point_sound: AudioStreamPlayer2D = $ScorePointSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,3 +35,5 @@ func _on_lower_wall_body_entered(body: Node2D) -> void:
 
 func _on_score_area_body_entered(body: Node2D) -> void:
 	emit_signal("point_scored")
+	score_point_sound.play()
+	

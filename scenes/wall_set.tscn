@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dulrggsyapgjx"]
+[gd_scene load_steps=5 format=3 uid="uid://dulrggsyapgjx"]
 
 [ext_resource type="Script" path="res://scripts/wall_set.gd" id="1_httfe"]
 [ext_resource type="PackedScene" uid="uid://dfcpibawan7lp" path="res://scenes/wall.tscn" id="1_kpgjx"]
+[ext_resource type="AudioStream" uid="uid://d0ibxic75jovt" path="res://assets/sounds/points_tick.wav" id="3_2oe8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkjoh"]
 size = Vector2(33, 200)
@@ -20,6 +21,11 @@ rotation = 3.14159
 [node name="CollisionShape2D" type="CollisionShape2D" parent="score_area"]
 position = Vector2(85.5, -100)
 shape = SubResource("RectangleShape2D_lkjoh")
+
+[node name="ScorePointSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2oe8i")
+volume_db = -3.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="upper_wall" to="." method="_on_upper_wall_body_entered"]
 [connection signal="body_entered" from="lower_wall" to="." method="_on_lower_wall_body_entered"]
