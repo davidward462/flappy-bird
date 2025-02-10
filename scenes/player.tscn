@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfso104brjspo"]
+[gd_scene load_steps=9 format=3 uid="uid://bfso104brjspo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pvl46"]
 [ext_resource type="Texture2D" uid="uid://c2aap33oj3vmy" path="res://assets/sprites/sprite_0.png" id="2_ylj8l"]
 [ext_resource type="Texture2D" uid="uid://dcwhl83muj87i" path="res://assets/sprites/sprite_1.png" id="3_r5q2c"]
 [ext_resource type="AudioStream" uid="uid://ckktlu5ymi84o" path="res://assets/sounds/wing-flag-flapping.wav" id="4_1e8g8"]
+[ext_resource type="Texture2D" uid="uid://beuccgtnsfyka" path="res://assets/sprites/sprite_2.png" id="4_7eblg"]
 [ext_resource type="AudioStream" uid="uid://bkedt8d2st0un" path="res://assets/sounds/crow-caw.mp3" id="5_mv456"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blbcc"]
@@ -14,6 +15,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_r5q2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7eblg")
 }],
 "loop": true,
 "name": &"default",
