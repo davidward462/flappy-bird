@@ -16,12 +16,6 @@ func fall() -> void:
 		animated_sprite.set_frame(2)
 		alive = false
 		velocity.y = 0
-		
-#func _process(delta: float) -> void:
-	#if Input.is_action_pressed("jump"):
-		
-	#else:
-		#
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
