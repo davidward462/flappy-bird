@@ -3,6 +3,7 @@ extends CharacterBody2D
 const JUMP_VELOCITY = -600.0
 const GRAVITY = Vector2(0, 2000)
 var alive = true
+var moving = 0
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
 @onready var flap_sound: AudioStreamPlayer2D = $FlapSound
 @onready var caw_sound: AudioStreamPlayer2D = $CawSound
@@ -16,10 +17,13 @@ func fall() -> void:
 		animated_sprite.set_frame(2)
 		alive = false
 		velocity.y = 0
+		
+func start_player():
+	moving = 1
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity
-	velocity += GRAVITY * delta
+	velocity += GRAVITY * delta * moving
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and alive:

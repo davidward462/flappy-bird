@@ -4,7 +4,7 @@ var wall_set_scene = preload("res://scenes/wall_set.tscn")
 const wall_spawn_x_pos = 400
 const wall_spawn_y_offset = 338
 var score = 0
-var game_running = true
+var game_running = false
 
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
@@ -16,6 +16,7 @@ var game_running = true
 func _ready() -> void:
 	# timer
 	timer.timeout.connect(_on_timer_timeout)
+	timer.stop()
 	randomize()
 	set_score_ui()
 	
@@ -49,6 +50,13 @@ func increment_score() -> void:
 	score += 1
 	set_score_ui()
 	
+func start_game() -> void:
+	background.start_movement()
+	bg_trees.start_movement()
+	timer.start()
+	player_node.start_player()
+	pass
+	
 func restart_game() -> void:
 	get_tree().reload_current_scene()
 	
@@ -65,6 +73,11 @@ func _process(delta: float) -> void:
 	# input for game restart
 	if Input.is_action_just_pressed("restart") and not player_node.alive:
 		restart_game()
+		
+	if Input.is_action_just_pressed("jump"):
+		if not game_running:
+			start_game()
+			game_running = true
 	
 	# stop the timer if the player is dead.
 	# Maybe this should be done with a signal.

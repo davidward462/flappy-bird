@@ -2,6 +2,7 @@ extends Node2D
 
 var speed = 90.0
 const DIRECTION = -1
+var moving = 1
 signal point_scored
 @onready var score_point_sound: AudioStreamPlayer2D = $ScorePointSound
 
@@ -17,12 +18,15 @@ func free_if_out_of_bounds(bound: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# move
-	position.x += speed * delta * DIRECTION
+	position.x += speed * delta * DIRECTION * moving
 	# free
 	free_if_out_of_bounds(-120)
+	
+func start_movement() -> void:
+	moving = 1
 		
 func stop_movement() -> void:
-	speed = 0
+	moving = 0
 
 func collision(body: Node2D) -> void:
 	body.fall()
