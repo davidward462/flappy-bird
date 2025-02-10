@@ -8,9 +8,11 @@ var game_running = false
 
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
-@onready var score_label: Label = $Score_label
+@onready var score_label: Label = $UI/Score_label
 @onready var background: ParallaxBackground = $ParallaxBackground
 @onready var bg_trees: ParallaxLayer = $ParallaxBackground/bg_trees
+@onready var text_0: Label = $UI/Text0
+@onready var text_1: Label = $UI/Text1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,9 +55,10 @@ func increment_score() -> void:
 func start_game() -> void:
 	background.start_movement()
 	bg_trees.start_movement()
-	timer.start()
+	timer.start()  
 	player_node.start_player()
-	pass
+	text_0.queue_free()
+	text_1.queue_free()
 	
 func restart_game() -> void:
 	get_tree().reload_current_scene()

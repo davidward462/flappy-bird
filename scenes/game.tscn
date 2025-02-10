@@ -13,10 +13,14 @@
 [node name="Game" type="Node" groups=["existing_walls"]]
 script = ExtResource("1_2cm83")
 
-[node name="Killzone" parent="." instance=ExtResource("5_b8snf")]
-position = Vector2(232, 794)
+[node name="UI" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Score_label" type="Label" parent="."]
+[node name="Score_label" type="Label" parent="UI"]
 z_index = 1
 offset_left = 24.0
 offset_top = 22.0
@@ -26,6 +30,47 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_23i1s")
 theme_override_font_sizes/font_size = 32
 metadata/_edit_use_anchors_ = true
+
+[node name="Text0" type="Label" parent="UI"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 9.75
+anchor_right = 6.575
+anchor_bottom = 9.825
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 83.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_23i1s")
+theme_override_font_sizes/font_size = 16
+text = "Press 'space' to jump,
+and to start the game."
+metadata/_edit_use_anchors_ = true
+
+[node name="Text1" type="Label" parent="UI"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.4375
+anchor_top = 2.36875
+anchor_right = 4.6875
+anchor_bottom = 2.36875
+offset_left = 87.5
+offset_top = 385.25
+offset_right = 158.5
+offset_bottom = 420.25
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_23i1s")
+theme_override_font_sizes/font_size = 16
+text = "Press 'R to restart on
+a failed attempt."
+metadata/_edit_use_anchors_ = true
+
+[node name="Killzone" parent="." instance=ExtResource("5_b8snf")]
+position = Vector2(232, 794)
 
 [node name="Player" parent="." instance=ExtResource("1_kf1n1")]
 z_index = 2

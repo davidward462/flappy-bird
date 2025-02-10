@@ -18,7 +18,7 @@ func fall() -> void:
 		alive = false
 		velocity.y = 0
 		
-func start_player():
+func start_player() -> void:
 	moving = 1
 
 func _physics_process(delta: float) -> void:
