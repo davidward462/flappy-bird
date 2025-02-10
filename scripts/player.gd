@@ -5,12 +5,14 @@ const GRAVITY = Vector2(0, 2000)
 var alive = true
 @onready var animated_sprite: AnimatedSprite2D = $Sprite2D/AnimatedSprite2D
 @onready var flap_sound: AudioStreamPlayer2D = $FlapSound
+@onready var caw_sound: AudioStreamPlayer2D = $CawSound
 
 func _ready() -> void:
 	pass
 
 func fall() -> void:
 	if alive:
+		caw_sound.play()
 		alive = false
 		velocity.y = 0
 		
