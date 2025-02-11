@@ -21,6 +21,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Score_label" type="Label" parent="UI"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 24.0
@@ -55,19 +56,36 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.4375
-anchor_top = 2.36875
-anchor_right = 4.6875
-anchor_bottom = 2.36875
-offset_left = 87.5
-offset_top = 385.25
-offset_right = 158.5
-offset_bottom = 420.25
+anchor_left = 0.75
+anchor_top = 12.275
+anchor_right = 8.8
+anchor_bottom = 13.15
+offset_bottom = -1.52588e-05
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_23i1s")
 theme_override_font_sizes/font_size = 16
 text = "Press 'R' to restart on
 a failed attempt."
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="UI"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.7236
+anchor_top = -9.47857
+anchor_right = 27.0736
+anchor_bottom = -7.45357
+offset_left = -752.944
+offset_top = 451.143
+offset_right = -752.944
+offset_bottom = 451.143
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_23i1s")
+theme_override_font_sizes/font_size = 52
+text = "FLAPPY BIRD"
+horizontal_alignment = 1
+autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Killzone" parent="." instance=ExtResource("5_b8snf")]

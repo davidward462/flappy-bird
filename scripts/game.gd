@@ -13,6 +13,7 @@ var game_running = false
 @onready var bg_trees: ParallaxLayer = $ParallaxBackground/bg_trees
 @onready var text_0: Label = $UI/Text0
 @onready var text_1: Label = $UI/Text1
+@onready var title: Label = $UI/Title
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -59,6 +60,8 @@ func start_game() -> void:
 	player_node.start_player()
 	text_0.queue_free()
 	text_1.queue_free()
+	title.queue_free()
+	score_label.visible = true
 	
 func restart_game() -> void:
 	get_tree().reload_current_scene()
