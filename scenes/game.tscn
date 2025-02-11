@@ -88,7 +88,11 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Killzone" parent="." instance=ExtResource("5_b8snf")]
+[node name="Upper_bound" parent="." instance=ExtResource("5_b8snf")]
+position = Vector2(233, -94)
+rotation = 3.14159
+
+[node name="Lower_bound" parent="." instance=ExtResource("5_b8snf")]
 position = Vector2(232, 794)
 
 [node name="Player" parent="." instance=ExtResource("1_kf1n1")]
@@ -99,22 +103,24 @@ position = Vector2(181, 319)
 wait_time = 3.0
 autostart = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="Background" type="Node" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
 script = ExtResource("3_4vvw3")
 
-[node name="bg_trees" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="bg_trees" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_mirroring = Vector2(360, 0)
 script = ExtResource("6_jqdlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bg_trees"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/bg_trees"]
 z_index = 1
 position = Vector2(180, 320)
 texture = ExtResource("6_pq41v")
 
-[node name="bg_clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="bg_clouds" type="ParallaxLayer" parent="Background/ParallaxBackground"]
 motion_mirroring = Vector2(360, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/bg_clouds"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/bg_clouds"]
 position = Vector2(180, 320)
 texture = ExtResource("7_54ish")
 

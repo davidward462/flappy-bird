@@ -9,8 +9,10 @@ var game_running = false
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
 @onready var score_label: Label = $UI/Score_label
-@onready var background: ParallaxBackground = $ParallaxBackground
-@onready var bg_trees: ParallaxLayer = $ParallaxBackground/bg_trees
+#@onready var background: ParallaxBackground = $ParallaxBackground
+#@onready var bg_trees: ParallaxLayer = $ParallaxBackground/bg_trees
+@onready var background: ParallaxBackground = $Background/ParallaxBackground
+@onready var bg_trees: ParallaxLayer = $Background/ParallaxBackground/bg_trees
 @onready var text_0: Label = $UI/Text0
 @onready var text_1: Label = $UI/Text1
 @onready var title: Label = $UI/Title
@@ -54,6 +56,7 @@ func increment_score() -> void:
 	set_score_ui()
 	
 func start_game() -> void:
+	print("start_game()")
 	background.start_movement()
 	bg_trees.start_movement()
 	timer.start()  
