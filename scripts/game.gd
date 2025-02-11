@@ -9,8 +9,6 @@ var game_running = false
 @onready var player_node = get_node("Player")
 @onready var timer = get_node("Timer")
 @onready var score_label: Label = $UI/Score_label
-#@onready var background: ParallaxBackground = $ParallaxBackground
-#@onready var bg_trees: ParallaxLayer = $ParallaxBackground/bg_trees
 @onready var background: ParallaxBackground = $Background/ParallaxBackground
 @onready var bg_trees: ParallaxLayer = $Background/ParallaxBackground/bg_trees
 @onready var text_0: Label = $UI/Text0
@@ -89,7 +87,6 @@ func _process(delta: float) -> void:
 			game_running = true
 	
 	# stop the timer if the player is dead.
-	# Maybe this should be done with a signal.
 	if game_running:
 		if not player_node.alive:
 			stop_game()

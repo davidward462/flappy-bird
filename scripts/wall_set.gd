@@ -38,6 +38,7 @@ func _on_lower_wall_body_entered(body: Node2D) -> void:
 	collision(body)
 
 func _on_score_area_body_entered(body: Node2D) -> void:
+	# player moved into score zone.
 	emit_signal("point_scored")
 	score_point_sound.play()
 	
