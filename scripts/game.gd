@@ -77,12 +77,17 @@ func stop_game() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	# input for game restart
+	# input for game restart.
+	# Only restart the game when restart is pressed, and player is dead.
 	if Input.is_action_just_pressed("restart") and not player_node.alive:
 		restart_game()
 		
+	# Start the game if the jump key is pressed on the title screen.
+	# On the title screen, game_running is false, and the player is alive.
+	# This is the main indicator that the game is on the title screen.
+	# Do not start the game if jump is presssed when the game is running.
 	if Input.is_action_just_pressed("jump"):
-		if not game_running:
+		if not game_running and player_node.alive:
 			start_game()
 			game_running = true
 	

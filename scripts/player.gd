@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 	velocity += GRAVITY * delta * moving
 
 	# Handle jump.
+	# Only jump if the player if alive.
+	# Immediatly when the player hits a wall or killbox, the player is not alive.
 	if Input.is_action_just_pressed("jump") and alive:
 		animated_sprite.set_frame(1)
 		velocity.y = JUMP_VELOCITY
